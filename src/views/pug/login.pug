@@ -1,6 +1,6 @@
 html
   head
-    title Home page
+    title Login page
     meta(name='description', content='A cool thing made with HyperDev')
     link#favicon(rel='icon', href='https://hyperdev.com/favicon-app.ico', type='image/x-icon')
     meta(charset='utf-8')
@@ -10,10 +10,17 @@ html
     link(rel='stylesheet', href='/static/style.css')
   body
     div.container
-      h1.text-center.title 简易版聊天室
-      div.text-center
-        div.btn-group
-          a.btn.btn-info(href='/login') 登录
-          a.btn.btn-info(href='/register') 注册
+      a(href='/') 返回首页
+      h1.text-center.title 登录
+      div.form-login
+        form.form(action='/login',method='POST')
+            .form-group
+                label 用户名
+                input.form-control(name='username',placeholder='请输入用户名')
+            .form-group
+                label 密码
+                input.form-control(name='password',placeholder='请输入密码',type='password')
+            .form-group 
+                input.btn.btn-block.btn-info(type='submit',value='登录')
     script(src='https://code.jquery.com/jquery-2.2.1.min.js', integrity='sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=', crossorigin='anonymous')
     script(src='/static/client.js')

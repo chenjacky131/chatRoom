@@ -1,6 +1,6 @@
 html
   head
-    title Home page
+    title Chat room
     meta(name='description', content='A cool thing made with HyperDev')
     link#favicon(rel='icon', href='https://hyperdev.com/favicon-app.ico', type='image/x-icon')
     meta(charset='utf-8')
@@ -9,11 +9,16 @@ html
     link(rel='stylesheet',href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css')
     link(rel='stylesheet', href='/static/style.css')
   body
-    div.container
-      h1.text-center.title 简易版聊天室
-      div.text-center
-        div.btn-group
-          a.btn.btn-info(href='/login') 登录
-          a.btn.btn-info(href='/register') 注册
+    div.container.chatroom
+      h2.center Socket.IO Chat Room
+      .chat.center
+        p#num-users
+        .chat-box
+          ul#messages
+          form(action='')
+            input#m(autocomplete='off')
+            button Send
+        a#logout(href='/logout') Logout  
     script(src='https://code.jquery.com/jquery-2.2.1.min.js', integrity='sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=', crossorigin='anonymous')
-    script(src='/static/client.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js')
+    script(src='/static/chat.js')
