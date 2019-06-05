@@ -1,7 +1,8 @@
 # chatRoom
 chat room with socket.io
 
-需要修改数据库配置才能正常使用
+需要新建配置文件.env
+
 ````
 //.env
 
